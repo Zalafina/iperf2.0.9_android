@@ -1,9 +1,7 @@
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 LOCAL_MODULE := iperf2.0.9
-#LOCAL_MODULE_TAGS := dev
-LOCAL_CFLAGS := -DHAVE_CONFIG_H -w -Wno-error=format-security -Wno-unused-parameter -Wno-macro-redefined -Wno-format
-LOCAL_LDFLAGS := -fPIE -pie
+LOCAL_CFLAGS := -DHAVE_CONFIG_H -Wno-error=format-security -Wno-unused-parameter -Wno-macro-redefined -Wno-format
 LOCAL_MODULE_PATH := $(TARGET_OUT_OPTIONAL_EXECUTABLES)
 LOCAL_SRC_FILES := \
 		compat/Thread.c \
@@ -37,9 +35,8 @@ LOCAL_SRC_FILES := \
 		src/main.cpp \
 
 LOCAL_C_INCLUDES += \
- 		$(LOCAL_PATH) \
+		$(LOCAL_PATH) \
 		$(LOCAL_PATH)/include
 
-LOCAL_DISABLE_FORMAT_STRING_CHECKS := true
 include $(BUILD_EXECUTABLE)
 
